@@ -11,12 +11,8 @@ import java.util.ArrayList;
  */
 public class Max_Prod_Three_Numbers {
     public int maximumProduct(int[] nums) {
-        int max1 = -9999;
-        int max2 = max1;
-        int max3 = max1;
-
-        int smallest1 = 9999;
-        int smallest2 = smallest1;
+        int max1 = Integer.MIN_VALUE, max2 = max1, max3 = max1;
+        int smallest1 = Integer.MAX_VALUE, smallest2 = smallest1;
 
         for(int i=0; i<nums.length; i++){
             if(nums[i] > max1){
