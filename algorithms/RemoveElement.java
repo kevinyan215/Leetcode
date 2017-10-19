@@ -12,15 +12,28 @@ Do not allocate extra space for another array, you must do this in place with co
 The order of elements can be changed. It doesn't matter what you leave beyond the new length.
  */
 public class RemoveElement{
-	 public int removeElement(int[] nums, int val) {
-        int replaceIndex = 0;
-        for(int i=0; i<nums.length; i++){
-            if(nums[i] != val){
-                nums[replaceIndex] = nums[i];
-                replaceIndex++;
+
+     //check for val
+     public int removeElement(int[] nums, int val) {
+        int length = nums.length;
+        for(int i=0; i<length; i++){
+            while(nums[i]==val && i<length){
+                nums[i] = nums[length-1];
+                length--;
             }
         }
+        return length;
+
+     //check for !val
+	 // public int removeElement(int[] nums, int val) {
+  //       int replaceIndex = 0;
+  //       for(int i=0; i<nums.length; i++){
+  //           if(nums[i] != val){
+  //               nums[replaceIndex] = nums[i];
+  //               replaceIndex++;
+  //           }
+  //       }
         
-        return replaceIndex;
-    }
+  //       return replaceIndex;
+  //   }
 }
