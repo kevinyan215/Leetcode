@@ -15,15 +15,15 @@ public class RemoveElement{
 
      //check for val
      public int removeElement(int[] nums, int val) {
-        int length = nums.length;
-        for(int i=0; i<length; i++){
-            while(nums[i]==val && i<length){
-                nums[i] = nums[length-1];
-                length--;
-            }
-        }
-        return length;
-
+         int length = nums.length;
+         for (int i = 0; i < length; i++) {
+             while (nums[i] == val && i < length) {
+                 nums[i] = nums[length - 1];
+                 length--;
+             }
+         }
+         return length;
+     }
      //check for !val
 	 // public int removeElement(int[] nums, int val) {
   //       int replaceIndex = 0;
