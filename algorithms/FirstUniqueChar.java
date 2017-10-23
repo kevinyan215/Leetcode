@@ -19,20 +19,33 @@ Note: You may assume the string contain only lowercase letters.
 
  public class FirstUniqueChar{
  	public int firstUniqChar(String s) {
-        Hashtable<Character,Integer> ht = new Hashtable<>();
+
+ 		//using array to keep track of duplicates
+ 		 int[] arr = new int[128];
         for(int i=0; i<s.length(); i++){
-            char key = s.charAt(i);
-            if(ht.containsKey(key)){
-                ht.put(key, ht.get(key)+1);
-            }else{
-                ht.put(key, 1);
-            }
-            
+            arr[s.charAt(i)]++;
         }
+        
         for(int i=0; i<s.length(); i++){
-            char key = s.charAt(i);
-            if(ht.get(key) == 1) return i;
+            if(arr[s.charAt(i)] == 1) return i;
         }
         return -1;
+
+        //using hashtable to keep track of duplicates
+        // Hashtable<Character,Integer> ht = new Hashtable<>();
+        // for(int i=0; i<s.length(); i++){
+        //     char key = s.charAt(i);
+        //     if(ht.containsKey(key)){
+        //         ht.put(key, ht.get(key)+1);
+        //     }else{
+        //         ht.put(key, 1);
+        //     }
+            
+        // }
+        // for(int i=0; i<s.length(); i++){
+        //     char key = s.charAt(i);
+        //     if(ht.get(key) == 1) return i;
+        // }
+        // return -1;
     }
  }
