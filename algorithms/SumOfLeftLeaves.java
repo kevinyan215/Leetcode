@@ -28,10 +28,10 @@ public class SumOfLeftLeaves{
     
     public boolean helper(TreeNode root, boolean isLeft){
         if(root == null) return true;
-        boolean lastNodeLeft = helper(root.left, true);
-        boolean lastNodeRight = helper(root.right, false);
+        helper(root.left, true);
+        helper(root.right, false);
         
-        if(lastNodeLeft && lastNodeRight && isLeft) sum += root.val;
+        if(root.left==null && root.right==null && isLeft) sum += root.val;
         return false;
     }
 }
